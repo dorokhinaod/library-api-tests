@@ -1,0 +1,21 @@
+Test cases:
+	1. Employee works with library cards (LC)
+		- Search LC by id (id = 3) Empty result
+		- Create new LC (Doe John): Successful
+		- Search LC by reader fullname (Doe John): Library card is found
+		- Update fullname (Duel John): Successful
+		- Search LC by reader fullname (Duel John): Library card is found
+		- Delete LC: Successful
+		- Search LC by reader fullname (Duel John): Empty result
+		
+	2. Employee gives and takes the book back (data driven test):
+		- Search book copy by name of book (The Adventures of Tom Sawyer): 2 copies are found
+		- Give the book (id = 1) from 10.12.2021 to reader (id = 2) by employee (id = 2): Successful
+		- Update is_in_library (false) for copy with id = 1: Successful
+		- Search book copy by author (Mark Twain): 3 copies are found, is_in_library is false for copy with id = 1
+		- Take the book (id = 1) back from 11.12.2021 from reader (id = 2) by employee (id = 2): Successful
+		- Update is_in_library (true) for copy with id = 1: Successful
+		- Search book copy by id (1): 1 copy is found, is_in_library is true for copy with id = 1
+		Examples are in DataForTest.xlsx
+		
+ATTENTION: My goal is not to show my test design skills, but to show my ability to create autotests for API testing
