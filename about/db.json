@@ -1,0 +1,71 @@
+{
+  "book": [
+    {
+      "id": 1,
+      "name": "The Adventures of Tom Sawyer",
+      "author": "Mark Twain"
+    },
+    {
+      "id": 2,
+      "name": "Robin Hood",
+      "author": "Sally M. Stockton"
+    },
+    {
+      "id": 3,
+      "name": "Huckleberry Finn",
+      "author": "Mark Twain"
+    }
+  ],
+  "copy": [
+    {
+      "id": 1,
+      "bookId": 1,
+      "is_in_library": true
+    },
+    {
+      "id": 2,
+      "bookId": 2,
+      "is_in_library": true
+    },
+    {
+      "id": 3,
+      "bookId": 3,
+      "is_in_library": true
+    },
+    {
+      "id": 4,
+      "bookId": 1,
+      "is_in_library": false
+    }
+  ],
+  "employee": [
+    {
+      "id": 1,
+      "fullname": "Jackson Michael"
+    },
+    {
+      "id": 2,
+      "fullname": "Gibson Mary"
+    }
+  ],
+  "libraryCard": [
+    {
+      "id": 1,
+      "fullname": "Johnson Clair"
+    },
+    {
+      "id": 2,
+      "fullname": "Jackson Peter"
+    }
+  ],
+  "bookMoving": [
+    {
+      "id": 1,
+      "copyId": 4,
+      "libraryCardId": 1,
+      "employeeId": 1,
+      "action": "given",
+      "date": "01.12.2021"
+    }
+  ]
+}
