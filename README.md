@@ -22,5 +22,5 @@ Test:
 (!) My goal is not to show my test design skills, but to show my ability to create autotests for API testing
 
 Developed:
-- UI/API autotest project (JAVA + Cucumber + Selenide);
+- UI/API autotest project (JAVA + Cucumber + Selenide/Rest Assured);
 - Allure report with attachments (see short overview in /about/AllureShortOverview.gif).
