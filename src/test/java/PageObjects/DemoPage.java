@@ -18,7 +18,7 @@ public class DemoPage {
         $(libraryCardHref).click();
         $(preElement).shouldBe(visible);
         String currentUrl = Selenide.webdriver().driver().getCurrentFrameUrl();
-        Assert.assertEquals("Unexpected current url. ", baseUrl + endpointLibraryCards, currentUrl + "x");
+        Assert.assertEquals("Unexpected current url. ", baseUrl + endpointLibraryCards, currentUrl);
     }
 
 }

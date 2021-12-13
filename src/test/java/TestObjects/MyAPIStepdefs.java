@@ -12,6 +12,7 @@ import org.junit.Assert;
 
 import java.util.List;
 
+import static APIMethods.MyAPIMethods.*;
 import static TestObjects.HookStepDefs.requestSpec;
 import static io.restassured.RestAssured.given;
 
@@ -25,7 +26,7 @@ public class MyAPIStepdefs {
         if (this.fullname.isEmpty()) {
             this.fullname = fullname;
         }
-        Response resp = MyAPIMethods.getLibraryCard("fullname", this.fullname);
+        Response resp = getLibraryCard("fullname", this.fullname);
         List<String> id = resp.getBody().path("id");
         Assert.assertEquals("Unexpected: card with fullname " + this.fullname + " was found. ", 0, id.size());
     }
@@ -34,18 +35,27 @@ public class MyAPIStepdefs {
     public void employeeCreatesLC() {
         JSONObject request = new JSONObject();
         request.put("fullname", this.fullname);
-        Response resp = MyAPIMethods.postLibraryCard(request);
+        Response resp = postLibraryCard(request);
         Allure.addAttachment("Params", "Params: " + request.toJSONString() + "\n" +
                 "Response: " + resp.asPrettyString());
-        resp = MyAPIMethods.getLibraryCard("fullname", this.fullname);
+        resp = getLibraryCard("fullname", this.fullname);
         List<Integer> cardsId = resp.getBody().path("id");
         cardId = cardsId.get(0);
     }
 
     @Then("Library card can be deleted")
     public void libraryCardCanBeDeleted() {
-        MyAPIMethods.deleteLibraryCard(cardId);
+        deleteLibraryCard(cardId);
         libraryCardDoesnTExistYet(this.fullname);
     }
 
+    @Then("Library card can be updated with {string}")
+    public void libraryCardCanBeUpdatedWith(String newFullname) {
+        JSONObject request = new JSONObject();
+        request.put("fullname", newFullname);
+        Response resp = patchLibraryCard(cardId, request);
+        resp = getLibraryCard("fullname", newFullname);
+        List<String> id = resp.getBody().path("id");
+        Assert.assertEquals("Unexpected: card with fullname " + newFullname + " wasn't found after update. ", 1, id.size());
+    }
 }

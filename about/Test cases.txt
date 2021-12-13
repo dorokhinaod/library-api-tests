@@ -1,13 +1,13 @@
 Test cases:
-	1. Employee works with library cards (LC)
-		- Search LC by fullname (Doe John) Empty result
-		- Create new LC (Doe John): Successful
-		- Update fullname (Duel John): Successful
-		- Search LC by reader fullname (Duel John): Library card is found
+	1. Employee works with library cards (LC) (data driven test)
+		- Search LC: Empty result
+		- Create new LC: Successful
+		- Update fullname: Successful
+		- Search LC: Library card is found
 		- Delete LC: Successful
-		- Search LC by id: Empty result
+		- Search LC: Empty result
 		
-	2. Employee gives and takes the book back (data driven test):
+	2. Employee gives and takes the book back (is not done):
 		- Search book copy by name of book (The Adventures of Tom Sawyer): 2 copies are found
 		- Give the book (id = 1) from 10.12.2021 to reader (id = 2) by employee (id = 2): Successful
 		- Update is_in_library (false) for copy with id = 1: Successful

@@ -41,6 +41,15 @@ public class MyAPIMethods {
         return resp;
     }
 
+    public static Response patchLibraryCard(int cardId, JSONObject request){
+        resp = given()
+                .spec(requestSpec)
+                .body(request.toJSONString())
+                .patch(endpointLibraryCard + "/" + cardId);
+        assertStatusIsOK(resp.getStatusCode());
+        return resp;
+    }
+
     public static void deleteLibraryCard(int cardID){
         resp = given()
                 .spec(requestSpec)
