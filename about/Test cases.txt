@@ -7,14 +7,8 @@ Test cases:
 		- Delete LC: Successful
 		- Search LC: Empty result
 		
-	2. Employee gives and takes the book back (is not done):
-		- Search book copy by name of book (The Adventures of Tom Sawyer): 2 copies are found
-		- Give the book (id = 1) from 10.12.2021 to reader (id = 2) by employee (id = 2): Successful
-		- Update is_in_library (false) for copy with id = 1: Successful
-		- Search book copy by author (Mark Twain): 3 copies are found, is_in_library is false for copy with id = 1
-		- Take the book (id = 1) back from 11.12.2021 from reader (id = 2) by employee (id = 2): Successful
-		- Update is_in_library (true) for copy with id = 1: Successful
-		- Search book copy by id (1): 1 copy is found, is_in_library is true for copy with id = 1
-		Examples are in DataForTest.xlsx
-		
 (!) My goal is not to show my test design skills, but to show my ability to create autotests for API testing
+
+Developed:
+	- Automation UI/API test project (JAVA + Cucumber + Selenide);
+	- Allure report with attachments.
