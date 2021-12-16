@@ -1,6 +1,6 @@
 # library-api-tests
 
-Demo json db: /about/db.json
+Demo json db: /src/main/resources/db.json
 
 Library emplyee is able to:
 1. Create new library card;
@@ -23,4 +23,4 @@ Test:
 
 Developed:
 - UI/API autotest project (JAVA + Cucumber + Selenide/Rest Assured);
-- Allure report with attachments (see short overview in /about/AllureShortOverview.gif).
+- Allure report with attachments (see short overview in AllureShortOverview.gif).
